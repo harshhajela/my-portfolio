@@ -527,12 +527,13 @@
       "status": "completed"
     },
     {
-      "id": "project-2",
+      "id": "personal-blog",
       "title": "Personal Blog - Angular + Contentful",
       "description": "Modern blog with Contentful CMS, S3 static hosting, SEO, and smooth animations",
       "longDescription": "Angular 16 SPA that fetches content from Contentful CMS and renders responsive, animated pages (hero + latest articles + contact). Deployed as a static website on AWS S3 with SPA routing fallback. Designed for fast performance, accessibility, and shareable previews.",
       "technologies": [
         "Angular",
+        "Tailwind CSS",
         "Contentful CMS",
         "AWS S3 (Static Hosting)",
         "TypeScript"
@@ -567,39 +568,42 @@
       "status": "completed"
     },
     {
-      "id": "project-3",
-      "title": "VIBE Coding & AI Lab",
-      "description": "Hands-on experiments with generative AI, prompt craft, and VIBE Coding site builds.",
-      "longDescription": "A living playground where I explore upcoming AI capabilities (image generation, LLM prompting, automation) and build small utilities and visual assets. Includes a production website created with VIBE Coding: JK Abrasives (jkabrasives.com), optimized as a fast, static experience.",
+      "id": "vibe-coding",
+      "title": "VIBE Coding & AI‑Assisted Site Builds",
+      "description": "AI‑driven workflows to design, generate, and ship fast static sites (JK Abrasives + Portfolio).",
+      "longDescription": "A living playground for AI‑assisted web building. Using repo‑aware agents (Claude Code, OpenAI Codex/ChatGPT) and prompt libraries to generate visuals, scaffold components, and automate deploys. Output includes a production site for JK Abrasives (jkabrasives.com) and my personal portfolio (harshhajela.dev), both optimized as fast, static experiences on S3/CloudFront.",
       "technologies": [
-        "VIBE Coding",
-        "OpenAI API",
-        "TypeScript",
+        "Claude Code",
+        "ChatGPT/Codex CLI",
         "Angular",
+        "Tailwind CSS",
         "AWS S3 (Static Hosting)",
-        "CloudFront"
+        "CloudFront",
+        "GitHub Actions"
       ],
       "features": [
         "AI prompt libraries and reusable templates",
+        "Repo‑aware AI CLI/IDE workflows (Claude Code, Codex)",
         "Soft‑glass, dark UI vector visuals generated via prompts",
-        "Static site build and deploy with VIBE Coding",
+        "Static site build and deploy to S3/CloudFront",
         "SEO metadata and share cards",
         "Light/Dark theme toggle"
       ],
       "challenges": [
         "Translating abstract ideas into repeatable prompt recipes",
-        "Keeping assets lightweight while maintaining visual quality",
-        "Optimizing static hosting and cache headers for fast loads"
+        "Aligning AI‑generated visuals with brand while keeping assets lightweight",
+        "Setting up reliable static hosting and cache headers for fast loads"
       ],
       "outcomes": [
-        "Published JK Abrasives website built with VIBE Coding",
-        "Faster content production using prompt templates",
-        "Consistent brand visuals produced via AI workflows"
+        "Published JK Abrasives and personal portfolio websites",
+        "Faster content production using prompt templates and repo‑aware agents",
+        "Consistent brand visuals via AI workflows with measurable performance budgets"
       ],
       "image": "/assets/images/vibe-ai-lab.png",
       "images": [],
-      "demoUrl": "https://jkabrasives.com",
-      "sourceUrl": "",
+      "demoUrl": "https://harshhajela.dev",
+      "secondaryDemoUrl": "https://jkabrasives.com",
+      "sourceUrl": "https://github.com/harshhajela/my-portfolio",
       "featured": true,
       "status": "ongoing"
     }
