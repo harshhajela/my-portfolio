@@ -1,0 +1,263 @@
+<!-- Project Details Page -->
+<div class="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-primary-50/30 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-900">
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-700/50">
+    <div class="container-max-width px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <button 
+          (click)="goBack()"
+          class="inline-flex items-center gap-3 text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors group"
+        >
+          <lucide-icon 
+            [img]="arrowLeftIcon" 
+            class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
+          ></lucide-icon>
+          Back to Portfolio
+        </button>
+        
+        <!-- Theme Toggle -->
+        <button
+          (click)="toggleTheme()"
+          class="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+          [attr.aria-label]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' theme'"
+        >
+          <lucide-icon 
+            [img]="currentTheme === 'light' ? moonIcon : sunIcon" 
+            class="w-5 h-5"
+          ></lucide-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main *ngIf="project" class="container-max-width px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Hero Section -->
+    <section class="mb-16 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          {{ project.title }}
+        </h1>
+        <p class="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+          {{ project.description }}
+        </p>
+        
+        <!-- Action Buttons -->
+        <div class="flex justify-center">
+          <a 
+            *ngIf="project.sourceUrl" 
+            [href]="project.sourceUrl" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-semibold rounded-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+          >
+            <lucide-icon [img]="githubIcon" class="w-5 h-5"></lucide-icon>
+            View Source Code
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="mb-16">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-8 text-center">
+          Technology Stack
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div 
+            *ngFor="let tech of project.technologies" 
+            class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-6 text-center hover:scale-105 hover:shadow-lg dark:hover:bg-neutral-700 transition-all duration-300"
+          >
+            <div class="w-12 h-12 mx-auto mb-4 bg-primary-100 dark:bg-primary-500/20 rounded-xl flex items-center justify-center">
+              <lucide-icon 
+                [img]="getIconForTechnology(tech)" 
+                class="w-6 h-6 text-primary-600 dark:text-primary-400"
+              ></lucide-icon>
+            </div>
+            <p class="font-semibold text-neutral-900 dark:text-neutral-100">{{ tech }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="mb-16">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-8 text-center">
+          Project Gallery
+        </h2>
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div 
+            *ngFor="let image of project.images; index as i" 
+            class="group cursor-pointer"
+            (click)="openImageModal(i)"
+          >
+            <div class="glass-card rounded-2xl overflow-hidden hover:shadow-glass-lg transition-all duration-300 transform hover:scale-105">
+              <div class="relative aspect-video bg-neutral-200 dark:bg-neutral-700">
+                <img 
+                  [src]="image" 
+                  [alt]="'Screenshot ' + (i + 1) + ' of ' + project.title"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                  <lucide-icon 
+                    [img]="eyeIcon" 
+                    class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></lucide-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="mb-16">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-8 text-center">
+          Project Overview
+        </h2>
+        <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-3xl p-8 md:p-12 shadow-lg">
+          <p class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            {{ project.longDescription }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features, Challenges, Outcomes Grid -->
+    <section class="mb-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-8">
+          
+          <!-- Features -->
+          <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 border border-emerald-200 dark:border-emerald-700/50 rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-emerald-500 dark:bg-emerald-600 rounded-xl flex items-center justify-center shadow-md">
+                <lucide-icon [img]="zapIcon" class="w-6 h-6 text-white"></lucide-icon>
+              </div>
+              <h3 class="text-2xl font-display font-bold text-emerald-900 dark:text-emerald-100">
+                Key Features
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li *ngFor="let feature of project.features" class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full mt-2 shrink-0"></div>
+                <span class="text-emerald-800 dark:text-emerald-200">{{ feature }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Challenges -->
+          <div class="bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20 border border-amber-200 dark:border-amber-700/50 rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-amber-500 dark:bg-amber-600 rounded-xl flex items-center justify-center shadow-md">
+                <lucide-icon [img]="shieldIcon" class="w-6 h-6 text-white"></lucide-icon>
+              </div>
+              <h3 class="text-2xl font-display font-bold text-amber-900 dark:text-amber-100">
+                Challenges
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li *ngFor="let challenge of project.challenges" class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-amber-500 dark:bg-amber-400 rounded-full mt-2 shrink-0"></div>
+                <span class="text-amber-800 dark:text-amber-200">{{ challenge }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Outcomes -->
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border border-blue-200 dark:border-blue-700/50 rounded-3xl p-8 shadow-lg">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-blue-500 dark:bg-blue-600 rounded-xl flex items-center justify-center shadow-md">
+                <lucide-icon [img]="trendingUpIcon" class="w-6 h-6 text-white"></lucide-icon>
+              </div>
+              <h3 class="text-2xl font-display font-bold text-blue-900 dark:text-blue-100">
+                Outcomes
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li *ngFor="let outcome of project.outcomes" class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full mt-2 shrink-0"></div>
+                <span class="text-blue-800 dark:text-blue-200">{{ outcome }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Modal -->
+  <div 
+    *ngIf="isImageModalOpen && project" 
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+    (click)="closeImageModal()"
+  >
+    <div class="relative w-full max-w-6xl max-h-[90vh] flex items-center justify-center" (click)="$event.stopPropagation()">
+      
+      <!-- Modal Image -->
+      <img 
+        [src]="project.images[currentImageIndex]" 
+        [alt]="'Screenshot ' + (currentImageIndex + 1) + ' of ' + project.title"
+        class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl"
+        [style.min-height]="'300px'"
+      >
+      
+      <!-- Navigation Controls -->
+      <button 
+        *ngIf="project.images.length > 1"
+        (click)="previousImage()"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all backdrop-blur-sm border-2 border-white/20"
+        [attr.aria-label]="'Previous image'"
+      >
+        <lucide-icon [img]="arrowLeftIcon" class="w-7 h-7"></lucide-icon>
+      </button>
+      
+      <button 
+        *ngIf="project.images.length > 1"
+        (click)="nextImage()"
+        class="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all backdrop-blur-sm rotate-180 border-2 border-white/20"
+        [attr.aria-label]="'Next image'"
+      >
+        <lucide-icon [img]="arrowLeftIcon" class="w-7 h-7"></lucide-icon>
+      </button>
+      
+      <!-- Close Button -->
+      <button 
+        (click)="closeImageModal()"
+        class="absolute top-4 right-4 w-12 h-12 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all backdrop-blur-sm border-2 border-white/20"
+        [attr.aria-label]="'Close modal'"
+      >
+        <lucide-icon [img]="xIcon" class="w-6 h-6"></lucide-icon>
+      </button>
+      
+      <!-- Image Counter -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-3 bg-black/60 text-white rounded-full backdrop-blur-sm border border-white/20 text-sm font-medium">
+        {{ currentImageIndex + 1 }} / {{ project.images.length }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Not Found -->
+  <div *ngIf="!project" class="container-max-width px-4 sm:px-6 lg:px-8 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+      Project Not Found
+    </h1>
+    <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8">
+      The project you're looking for doesn't exist or has been moved.
+    </p>
+    <button 
+      (click)="goBack()"
+      class="inline-flex items-center gap-3 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all"
+    >
+      <lucide-icon [img]="arrowLeftIcon" class="w-5 h-5"></lucide-icon>
+      Back to Portfolio
+    </button>
+  </div>
+</div>

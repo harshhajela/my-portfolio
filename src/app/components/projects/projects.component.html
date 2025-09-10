@@ -1,0 +1,86 @@
+<section id="projects" #projectsSection class="section-padding bg-neutral-50 dark:bg-neutral-800"
+  [attr.aria-labelledby]="'projects-title'">
+  <div class="container-max-width">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 id="projects-title"
+          class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          My Work
+        </h2>
+        <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+          A showcase of projects I've built and articles I've written
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div *ngFor="let project of projects; trackBy: trackByProject; index as i" class="group animate-on-scroll"
+          [style.animation-delay]="(i * 0.1) + 's'">
+          <div
+            class="glass-card rounded-3xl overflow-hidden shadow-glass-lg hover:shadow-glass-lg transition-all duration-300 transform hover:scale-105">
+            <!-- Project Image -->
+            <div class="relative aspect-video overflow-hidden bg-neutral-200 dark:bg-neutral-700">
+              <img [src]="project.image" [alt]="project.title + ' screenshot'"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                loading="lazy" onError="this.src='/assets/images/project-placeholder.jpg'">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              </div>
+
+            </div>
+
+            <!-- Project Content -->
+            <div class="p-8">
+              <h3
+                class="text-xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                {{ project.title }}
+              </h3>
+
+              <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                {{ project.description }}
+              </p>
+
+              <!-- Technologies -->
+              <div class="mb-6">
+                <div class="flex flex-wrap gap-2">
+                  <span *ngFor="let tech of project.technologies.slice(0, 4)"
+                    class="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 text-xs rounded-lg">
+                    {{ tech }}
+                  </span>
+                  <span *ngIf="project.technologies.length > 4"
+                    class="px-2 py-1 bg-neutral-200 dark:bg-neutral-600 text-neutral-600 dark:text-neutral-400 text-xs rounded-lg">
+                    +{{ project.technologies.length - 4 }} more
+                  </span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex items-center gap-4">
+                <button (click)="openModal(project)"
+                  class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                  [attr.aria-label]="'View details for ' + project.title">
+                  <lucide-icon [img]="eyeIcon" class="w-4 h-4"></lucide-icon>
+                  Details
+                </button>
+
+                <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank" rel="noopener noreferrer"
+                  class="p-2 text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                  [attr.aria-label]="'View live demo of ' + project.title + ' (opens in new tab)'">
+                  <lucide-icon [img]="externalLinkIcon" class="w-5 h-5"></lucide-icon>
+                </a>
+
+                <a *ngIf="project.sourceUrl" [href]="project.sourceUrl" target="_blank" rel="noopener noreferrer"
+                  class="p-2 text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                  [attr.aria-label]="'View source code for ' + project.title + ' (opens in new tab)'">
+                  <lucide-icon [img]="githubIcon" class="w-5 h-5"></lucide-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,108 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-700/50">
+  <!-- Skip to content link -->
+  <!-- <a href="#main-content" class="skip-link">Skip to main content</a> -->
+  
+  <nav class="container-max-width px-4 sm:px-6 lg:px-8 py-2" role="navigation" [attr.aria-label]="'Main navigation'">
+    <div class="flex items-center justify-between">
+      <!-- Logo/Brand -->
+      <div class="flex items-center">
+        <button 
+          (click)="scrollToTop()"
+          class="text-xl md:text-2xl font-display font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-lg px-2 py-1"
+          [attr.aria-label]="'Go to top of page'"
+        >
+          {{ personalInfo.name }}
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <ul class="flex items-center space-x-8" role="menubar">
+          <li *ngFor="let item of navigationItems" role="none">
+            <button
+              (click)="scrollToSection(item.href)"
+              [class]="getNavLinkClasses(item.href)"
+              [attr.aria-label]="item.ariaLabel"
+              role="menuitem"
+            >
+              {{ item.label }}
+            </button>
+          </li>
+        </ul>
+        
+        <!-- Theme Toggle -->
+        <button
+          (click)="toggleTheme()"
+          class="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+          [attr.aria-label]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' theme'"
+        >
+          <lucide-icon 
+            [img]="currentTheme === 'light' ? moonIcon : sunIcon" 
+            class="w-5 h-5"
+          ></lucide-icon>
+        </button>
+
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center gap-2 md:hidden">
+        <!-- Mobile Theme Toggle -->
+        <button
+          (click)="toggleTheme()"
+          class="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+          [attr.aria-label]="'Switch to ' + (currentTheme === 'light' ? 'dark' : 'light') + ' theme'"
+        >
+          <lucide-icon 
+            [img]="currentTheme === 'light' ? moonIcon : sunIcon" 
+            class="w-5 h-5"
+          ></lucide-icon>
+        </button>
+
+        <button
+          (click)="toggleMobileMenu()"
+          class="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+          [attr.aria-expanded]="isMobileMenuOpen"
+          [attr.aria-label]="isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+        >
+          <lucide-icon 
+            [img]="isMobileMenuOpen ? xIcon : menuIcon" 
+            class="w-6 h-6"
+          ></lucide-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      class="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
+      [class.max-h-0]="!isMobileMenuOpen"
+      [class.max-h-96]="isMobileMenuOpen"
+      [class.opacity-0]="!isMobileMenuOpen"
+      [class.opacity-100]="isMobileMenuOpen"
+      [attr.aria-hidden]="!isMobileMenuOpen"
+    >
+      <div class="pt-4 pb-2 border-t border-neutral-200 dark:border-neutral-700 mt-4">
+        <ul class="space-y-2" role="menu">
+          <li *ngFor="let item of navigationItems" role="none">
+            <button
+              (click)="scrollToSection(item.href, true)"
+              [class]="getMobileNavLinkClasses(item.href)"
+              [attr.aria-label]="item.ariaLabel"
+              role="menuitem"
+            >
+              {{ item.label }}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Menu Backdrop -->
+<div 
+  *ngIf="isMobileMenuOpen"
+  class="fixed inset-0 bg-black/20 dark:bg-black/40 z-40 md:hidden"
+  (click)="closeMobileMenu()"
+  [attr.aria-hidden]="true"
+></div>

@@ -1,0 +1,52 @@
+<section 
+  id="contact" 
+  #contactSection
+  class="section-padding bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-900"
+  [attr.aria-labelledby]="'contact-title'"
+>
+  <div class="container-max-width">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 id="contact-title" class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Let's Work Together
+        </h2>
+        <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+          Ready to bring your ideas to life? Let's discuss your project and explore how we can collaborate.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <!-- Contact Info -->
+        <!-- Contact CTA -->
+        <div class="text-center animate-on-scroll">
+          <div class="glass-card rounded-3xl p-12 shadow-glass-lg max-w-2xl mx-auto">
+            <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg">
+              <lucide-icon [img]="mailIcon" class="w-10 h-10 text-white"></lucide-icon>
+            </div>
+            
+            <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+              Let's work together
+            </h3>
+            
+            <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+              Ready to discuss your next project? Drop me a line and let's create something amazing.
+            </p>
+
+            <a
+              [href]="'mailto:' + personalInfo.contact.email + '?subject=Project Inquiry'"
+              class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-glow-lg transition-all duration-300 transform hover:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-700"
+            >
+              <lucide-icon [img]="mailIcon" class="w-5 h-5"></lucide-icon>
+              Send me an email
+            </a>
+
+            <p class="mt-6 text-sm text-neutral-500 dark:text-neutral-500">
+              {{ personalInfo.contact.email }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

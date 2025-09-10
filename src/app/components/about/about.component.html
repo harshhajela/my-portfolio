@@ -1,0 +1,214 @@
+<section 
+  id="about" 
+  #aboutSection
+  class="section-padding bg-white dark:bg-neutral-900"
+  [attr.aria-labelledby]="'about-title'"
+>
+  <div class="container-max-width">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 id="about-title" class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          About Me
+        </h2>
+        <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+          Passionate about building scalable solutions and leading high-performing development teams
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- Bio Content -->
+        <div class="space-y-8">
+          <!-- Main Bio -->
+          <div class="animate-on-scroll">
+            <div class="glass-card rounded-3xl p-8 shadow-glass-lg">
+              <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-neutral-100 mb-6 flex items-center gap-3">
+                <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+                My Story
+              </h3>
+              <div class="prose prose-lg dark:prose-invert max-w-none">
+                <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
+                  {{ personalInfo.bio }}
+                </p>
+                <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                  Strong advocate for clean code, test-driven development, and DevOps practices, with a proven track record of improving performance, reliability, and business outcomes.
+                </p>
+                <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+                  or sharing knowledge through technical writing and mentoring fellow developers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Highlights -->
+          <!-- <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+            <div class="glass-card rounded-3xl p-8 shadow-glass-lg">
+              <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-neutral-100 mb-6 flex items-center gap-3">
+                <lucide-icon [img]="checkCircleIcon" class="w-6 h-6 text-accent-500"></lucide-icon>
+                Key Highlights
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-4">
+                  <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                  <div>
+                    <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-1">7+ Years Experience</h4>
+                    <p class="text-neutral-600 dark:text-neutral-400">Full-stack development across diverse industries and technologies</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                  <div>
+                    <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-1">Enterprise Scale</h4>
+                    <p class="text-neutral-600 dark:text-neutral-400">Built applications serving 500K+ users with 99.9% uptime</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                  <div>
+                    <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-1">Team Leadership</h4>
+                    <p class="text-neutral-600 dark:text-neutral-400">Led cross-functional teams and mentored 10+ developers</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                  <div>
+                    <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-1">Cloud Expertise</h4>
+                    <p class="text-neutral-600 dark:text-neutral-400">AWS certified with hands-on experience in cloud architecture</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-8">
+          <!-- Location & Contact -->
+          <div class="animate-on-scroll" style="animation-delay: 0.1s;">
+            <div class="glass-card rounded-3xl p-8 shadow-glass-lg">
+              <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-neutral-100 mb-6 flex items-center gap-3">
+                <lucide-icon [img]="mapPinIcon" class="w-6 h-6 text-primary-500"></lucide-icon>
+                Location & Availability
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-2xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                    <lucide-icon [img]="mapPinIcon" class="w-5 h-5 text-primary-600 dark:text-primary-400"></lucide-icon>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-neutral-900 dark:text-neutral-100">{{ personalInfo.contact.location }}</p>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400">{{ personalInfo.contact.timezone }}</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-2xl bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+                    <lucide-icon [img]="clockIcon" class="w-5 h-5 text-accent-600 dark:text-accent-400"></lucide-icon>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-neutral-900 dark:text-neutral-100">{{ personalInfo.contact.availability }}</p>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400">Ready for new challenges</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="animate-on-scroll" style="animation-delay: 0.3s;">
+            <div class="glass-card rounded-3xl p-8 shadow-glass-lg">
+              <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-neutral-100 mb-6 flex items-center gap-3">
+                <lucide-icon [img]="awardIcon" class="w-6 h-6 text-accent-500"></lucide-icon>
+                Certifications
+              </h3>
+              <div class="space-y-6">
+                <div 
+                  *ngFor="let cert of certifications; trackBy: trackByCert" 
+                  class="group relative"
+                >
+                  <div class="flex items-start gap-4 p-4 rounded-2xl bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-700 hover:from-primary-50 hover:to-accent-50 dark:hover:from-primary-900/20 dark:hover:to-accent-900/20 transition-all duration-300">
+                    <!-- Certification Badge -->
+                    <div class="w-12 h-12 rounded-xl bg-white dark:bg-neutral-600 shadow-sm flex items-center justify-center flex-shrink-0">
+                      <img 
+                        *ngIf="cert.badge"
+                        [src]="cert.badge" 
+                        [alt]="cert.name + ' badge'"
+                        class="w-8 h-8 object-contain"
+                        onError="this.style.display='none'"
+                      >
+                      <lucide-icon 
+                        *ngIf="!cert.badge"
+                        [img]="awardIcon" 
+                        class="w-6 h-6 text-primary-600 dark:text-primary-400"
+                      ></lucide-icon>
+                    </div>
+                    
+                    <!-- Certification Info -->
+                    <div class="flex-1 min-w-0">
+                      <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-1 line-clamp-2">
+                        {{ cert.name }}
+                      </h4>
+                      <p class="text-sm font-medium text-primary-600 dark:text-primary-400 mb-1">
+                        {{ cert.issuer }}
+                      </p>
+                      <div class="flex items-center gap-4 text-xs text-neutral-600 dark:text-neutral-400">
+                        <span>{{ formatDate(cert.issueDate) }}</span>
+                        <span *ngIf="cert.expiryDate" class="flex items-center gap-1">
+                          <span class="w-1 h-1 bg-current rounded-full"></span>
+                          Expires {{ formatDate(cert.expiryDate) }}
+                        </span>
+                        <span *ngIf="!cert.expiryDate" class="flex items-center gap-1 text-accent-600 dark:text-accent-400">
+                          <span class="w-1 h-1 bg-current rounded-full"></span>
+                          No expiry
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- Verification Link -->
+                    <a
+                      *ngIf="cert.verificationUrl"
+                      [href]="cert.verificationUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="opacity-0 group-hover:opacity-100 transition-opacity p-2 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                      [attr.aria-label]="'Verify ' + cert.name + ' certification (opens in new tab)'"
+                    >
+                      <lucide-icon [img]="externalLinkIcon" class="w-4 h-4"></lucide-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fun Facts -->
+          <!-- <div class="animate-on-scroll" style="animation-delay: 0.4s;">
+            <div class="glass-card rounded-3xl p-8 shadow-glass-lg">
+              <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
+                Fun Facts
+              </h3>
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">500K+</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Users Served</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Projects Built</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">10+</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Developers Mentored</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">99.9%</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Uptime Achieved</div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

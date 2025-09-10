@@ -1,0 +1,63 @@
+// Project Details Component Styles
+
+// Glass card effect (assuming it's not globally defined)
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  :global(.dark) & {
+    background: rgba(23, 23, 23, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.shadow-glass-lg {
+  box-shadow: 
+    0 10px 25px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+// Container max width (assuming it's not globally defined)
+.container-max-width {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Smooth scrolling for the page
+:host {
+  scroll-behavior: smooth;
+}
+
+// Image hover effects
+.group:hover img {
+  transform: scale(1.05);
+}
+
+// Modal backdrop blur
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+// Custom scrollbar for modal if needed
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}

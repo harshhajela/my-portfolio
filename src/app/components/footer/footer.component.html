@@ -1,0 +1,121 @@
+<footer class="bg-neutral-900 dark:bg-neutral-950 text-neutral-300 dark:text-neutral-400 border-t border-neutral-800 dark:border-neutral-700">
+  <!-- Main Footer Content -->
+  <div class="section-padding border-b border-neutral-800 dark:border-neutral-700">
+    <div class="container-max-width">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <!-- Brand Section -->
+          <div class="lg:col-span-2">
+            <h3 class="text-2xl font-display font-bold text-white dark:text-neutral-100 mb-4">
+              {{ personalInfo.name }}
+            </h3>
+            <p class="text-lg font-medium text-primary-400 mb-4">
+              {{ personalInfo.title }}
+            </p>
+            <p class="leading-relaxed max-w-md mb-6">
+              {{ personalInfo.tagline }}
+            </p>
+            
+            <!-- Social Links -->
+            <div class="flex items-center gap-4">
+              <a
+                *ngFor="let social of socialLinks; trackBy: trackBySocial"
+                [href]="social.url"
+                [target]="social.url.startsWith('mailto:') ? '_self' : '_blank'"
+                [rel]="social.url.startsWith('mailto:') ? '' : 'noopener noreferrer'"
+                [attr.aria-label]="social.ariaLabel"
+                class="p-3 rounded-2xl bg-neutral-800 dark:bg-neutral-900 hover:bg-neutral-700 dark:hover:bg-neutral-800 text-neutral-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
+              >
+                <lucide-icon [img]="getSocialIcon(social.icon)" class="w-5 h-5"></lucide-icon>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Quick Links -->
+          <div>
+            <h4 class="font-semibold text-white dark:text-neutral-100 mb-4">Quick Links</h4>
+            <ul class="space-y-3">
+              <li *ngFor="let item of navigationItems">
+                <button
+                  (click)="scrollToSection(item.href)"
+                  class="text-neutral-400 hover:text-primary-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded px-1 py-0.5"
+                  [attr.aria-label]="item.ariaLabel"
+                >
+                  {{ item.label }}
+                </button>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Contact Info -->
+          <div>
+            <h4 class="font-semibold text-white dark:text-neutral-100 mb-4">Contact</h4>
+            <div class="space-y-3">
+              <div>
+                <p class="text-sm text-neutral-500 dark:text-neutral-600 mb-1">Email</p>
+                <a 
+                  [href]="'mailto:' + personalInfo.contact.email"
+                  class="text-neutral-400 hover:text-primary-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded px-1 py-0.5"
+                >
+                  {{ personalInfo.contact.email }}
+                </a>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 dark:text-neutral-600 mb-1">Location</p>
+                <p class="text-neutral-400">{{ personalInfo.contact.location }}</p>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 dark:text-neutral-600 mb-1">Status</p>
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
+                  <p class="text-neutral-400">{{ personalInfo.contact.availability }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="section-padding py-6">
+    <div class="container-max-width">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center space-y-4">
+          <!-- Copyright -->
+          <div class="flex items-center justify-center gap-2 text-sm">
+            <span>© {{ currentYear }} {{ personalInfo.name }}. Made with</span>
+            <lucide-icon [img]="heartIcon" class="w-4 h-4 text-red-500 animate-pulse"></lucide-icon>
+            <span>in {{ personalInfo.contact.location.split(',')[1].trim() }}</span>
+          </div>
+          
+          <!-- Back to Top -->
+          <button
+            (click)="scrollToTop()"
+            class="group inline-flex items-center gap-2 px-4 py-2 bg-neutral-800 dark:bg-neutral-900 hover:bg-neutral-700 dark:hover:bg-neutral-800 text-neutral-400 hover:text-primary-400 rounded-lg transition-all duration-300 transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
+            [attr.aria-label]="'Scroll to top of page'"
+          >
+            <span class="text-sm font-medium">Back to top</span>
+            <lucide-icon [img]="arrowUpIcon" class="w-4 h-4 group-hover:animate-bounce"></lucide-icon>
+          </button>
+        </div>
+        
+        <!-- Additional Info -->
+        <div class="mt-6 pt-6 border-t border-neutral-800 dark:border-neutral-700 text-center">
+          <p class="text-xs text-neutral-500 dark:text-neutral-600">
+            Built with Angular 17, Tailwind CSS, and deployed on AWS S3. 
+            <a 
+              href="https://github.com/harsh-hajela/portfolio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-neutral-400 hover:text-primary-400 transition-colors underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded"
+            >
+              View Source Code
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

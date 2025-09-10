@@ -1,0 +1,629 @@
+{
+  "personal": {
+    "name": "Harsh Hajela",
+    "title": "Full Stack Engineer",
+    "tagline": "Engineering excellence in architecture, cloud, and user experience",
+    "bio": "Passionate full-stack engineer with 17+ years of experience designing and delivering enterprise-grade solutions across diverse domains, including aerospace, large-scale technology platforms, online gambling, smart city and IoT, and multi-domain technology consultancy. Adept at building scalable architectures, driving cloud adoption, and leading cross-functional teams.",
+    "avatar": "/assets/images/harsh-hajela.png",
+    "resumeUrl": "/assets/files/harsh-hajela-resume.pdf",
+    "rotatingKeywords": [
+      "AI",
+      "Cloud",
+      "Microservices",
+      "Data",
+      "Reliability",
+      "Security",
+      "Observability"
+    ],
+    "rotateInterval": 2200,
+    "rotateMode": "fade",
+    "contact": {
+      "email": "harsh.hajela@gmail.com",
+      "location": "London, United Kingdom",
+      "timezone": "Europe/London",
+      "availability": "Open to opportunities"
+    },
+    "social": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/harsh-hajela",
+        "icon": "linkedin",
+        "ariaLabel": "Connect with Harsh on LinkedIn"
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/harshhajela",
+        "icon": "github",
+        "ariaLabel": "View Harsh's GitHub profile"
+      },
+      {
+        "platform": "Email",
+        "url": "mailto:harsh.hajela@gmail.com",
+        "icon": "mail",
+        "ariaLabel": "Send email to Harsh"
+      }
+    ],
+    "seo": {
+      "title": "Harsh Hajela - Senior Full Stack Engineer | Java, Angular, AWS",
+      "description": "Experienced full-stack engineer specializing in Java, Spring Boot, Angular, microservices, and AWS cloud solutions. Available for senior development roles in London.",
+      "keywords": [
+        "Java Developer",
+        "Angular Developer",
+        "Full Stack Engineer",
+        "AWS",
+        "Spring Boot",
+        "Microservices",
+        "DevOps",
+        "London"
+      ],
+      "author": "Harsh Hajela",
+      "ogImage": "/assets/images/harsh-hajela-og.jpg",
+      "canonicalUrl": "https://harshhajela.dev"
+    }
+  },
+  "navigation": [
+    {
+      "label": "About",
+      "href": "#about",
+      "ariaLabel": "Go to about section"
+    },
+    {
+      "label": "Work",
+      "href": "#projects",
+      "ariaLabel": "Go to work section"
+    },
+    {
+      "label": "Skills",
+      "href": "#skills",
+      "ariaLabel": "Go to skills section"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience",
+      "ariaLabel": "Go to experience section"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact",
+      "ariaLabel": "Go to contact section"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "skills": [
+        {
+          "name": "Java",
+          "level": 95,
+          "category": "Programming"
+        },
+        {
+          "name": "Kotlin",
+          "level": 85,
+          "category": "Programming"
+        },
+        {
+          "name": "Python",
+          "level": 80,
+          "category": "Programming"
+        },
+        {
+          "name": "TypeScript",
+          "level": 90,
+          "category": "Programming"
+        },
+        {
+          "name": "JavaScript",
+          "level": 88,
+          "category": "Programming"
+        },
+        {
+          "name": "SQL",
+          "level": 85,
+          "category": "Database"
+        },
+        {
+          "name": ".NET",
+          "level": 65,
+          "category": "Programming"
+        }
+      ]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "skills": [
+        {
+          "name": "Spring Boot",
+          "level": 95,
+          "category": "Backend"
+        },
+        {
+          "name": "Spring Security",
+          "level": 90,
+          "category": "Backend"
+        },
+        {
+          "name": "Angular",
+          "level": 92,
+          "category": "Frontend"
+        },
+        {
+          "name": "React",
+          "level": 78,
+          "category": "Frontend"
+        },
+        {
+          "name": "Hibernate/JPA",
+          "level": 88,
+          "category": "Backend"
+        },
+        {
+          "name": "RxJS",
+          "level": 85,
+          "category": "Frontend"
+        }
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "skills": [
+        {
+          "name": "AWS",
+          "level": 88,
+          "category": "Cloud"
+        },
+        {
+          "name": "Docker",
+          "level": 90,
+          "category": "DevOps"
+        },
+        {
+          "name": "Kubernetes",
+          "level": 82,
+          "category": "DevOps"
+        },
+        {
+          "name": "Jenkins",
+          "level": 85,
+          "category": "CI/CD"
+        },
+        {
+          "name": "GitLab CI",
+          "level": 80,
+          "category": "CI/CD"
+        },
+        {
+          "name": "Terraform",
+          "level": 75,
+          "category": "Infrastructure"
+        }
+      ]
+    },
+    {
+      "name": "Data & Messaging",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "level": 88,
+          "category": "Database"
+        },
+        {
+          "name": "MySQL",
+          "level": 85,
+          "category": "Database"
+        },
+        {
+          "name": "Redis",
+          "level": 80,
+          "category": "Cache"
+        },
+        {
+          "name": "Apache Kafka",
+          "level": 82,
+          "category": "Messaging"
+        },
+        {
+          "name": "MongoDB",
+          "level": 75,
+          "category": "Database"
+        },
+        {
+          "name": "Elasticsearch",
+          "level": 70,
+          "category": "Search"
+        }
+      ]
+    },
+    {
+      "name": "Architecture & Patterns",
+      "skills": [
+        {
+          "name": "Microservices",
+          "level": 90,
+          "category": "Architecture"
+        },
+        {
+          "name": "REST APIs",
+          "level": 95,
+          "category": "Architecture"
+        },
+        {
+          "name": "Event-Driven Architecture",
+          "level": 85,
+          "category": "Architecture"
+        },
+        {
+          "name": "Domain-Driven Design",
+          "level": 80,
+          "category": "Architecture"
+        },
+        {
+          "name": "CQRS",
+          "level": 75,
+          "category": "Architecture"
+        }
+      ]
+    },
+    {
+      "name": "Quality & Methodologies",
+      "skills": [
+        {
+          "name": "TDD/BDD",
+          "level": 90,
+          "category": "Testing"
+        },
+        {
+          "name": "JUnit",
+          "level": 90,
+          "category": "Testing"
+        },
+        {
+          "name": "Spock",
+          "level": 90,
+          "category": "Testing"
+        },
+        {
+          "name": "WireMock",
+          "level": 85,
+          "category": "Testing"
+        },
+        {
+          "name": "JMeter",
+          "level": 85,
+          "category": "Testing"
+        },
+        {
+          "name": "Agile/Scrum",
+          "level": 90,
+          "category": "Methodology"
+        },
+        {
+          "name": "Code Review",
+          "level": 92,
+          "category": "Quality"
+        },
+        {
+          "name": "Performance Optimization",
+          "level": 85,
+          "category": "Quality"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "Elemental Concept",
+      "position": "Senior Software Engineer",
+      "location": "London, UK",
+      "startDate": "2024-02",
+      "endDate": "2025-09",
+      "description": "Led full-stack engineering for data-intensive platforms, driving cloud-native delivery and database modernization initiatives.",
+      "achievements": [
+        "Architected a real-time market data pipeline handling 50K+ price updates/sec with sub-100ms latency.",
+        "Delivered resilient Kotlin/Spring Boot microservices with rolling updates and auto-scaling, ensuring zero downtime deployments.",
+        "Optimised RabbitMQ streams to achieve p99 delivery under 5ms across 300K+ messages/min through queue sharding and tuning.",
+        "Spearheaded enterprise-wide migration from MySQL to PostgreSQL, reducing complex query times by 40%.",
+        "Established observability stack with Prometheus and Grafana, reducing mean-time-to-detect incidents by 35%.",
+        "Mentored junior engineers through pair programming and rigorous code reviews, improving onboarding speed and code quality."
+      ],
+      "technologies": [
+        "Kotlin",
+        "Java 21",
+        "Python",
+        "Node.js",
+        "Spring Boot",
+        "RabbitMQ",
+        "PostgreSQL",
+        "MySQL",
+        "Docker",
+        "Kubernetes",
+        "CI/CD"
+      ],
+      "website": "https://www.elementalconcept.com"
+    },
+    {
+      "id": "exp-2",
+      "company": "Bally's Interactive",
+      "position": "Senior Software Engineer",
+      "location": "London, UK",
+      "startDate": "2022-07",
+      "endDate": "2023-08",
+      "description": "Specialized in payments engineering within the online gambling sector, driving compliance, scalability, and seamless player transactions.",
+      "achievements": [
+        "Upgraded payments microservices to Java 17 and Spring Boot 3, improving performance, security posture, and compliance readiness.",
+        "Redesigned the payment-service database to isolate critical components, enhancing maintainability and data governance.",
+        "Extracted wallet and responsible gaming features into standalone microservices, strengthening scalability and regulatory compliance.",
+        "Implemented instant auto-withdrawals, reducing withdrawal time from 4 days to seconds and automating fraud-prevention checks.",
+        "Collaborated with compliance and product teams to align system capabilities with PCI DSS standards and responsible gaming regulations."
+      ],
+      "technologies": [
+        "Java 17",
+        "Spring Boot",
+        "Apache Kafka",
+        "IBM Db2",
+        "MySQL",
+        "Liquibase",
+        "Docker",
+        "Kubernetes",
+        "Ansible",
+        "TDD"
+      ],
+      "website": "https://www.ballys.com"
+    },
+    {
+      "id": "exp-3",
+      "company": "Signify (Telensa Limited)",
+      "position": "Senior Software Engineer",
+      "location": "Cambridgeshire, UK",
+      "startDate": "2019-04",
+      "endDate": "2022-03",
+      "description": "Delivered scalable IoT and smart-city platforms enabling large-scale street lighting and sensor network management.",
+      "achievements": [
+        "Led development of Java/Spring Boot satellite services powering smart-city features such as device onboarding, scheduling, and fault reporting.",
+        "Built a TALQ-compliant Central Management System, ensuring interoperability across heterogeneous controllers and gateways.",
+        "Designed resilient REST APIs with clear versioning, idempotency, and contract tests to guarantee backward compatibility.",
+        "Implemented RabbitMQ-driven event workflows processing high-volume telemetry and acknowledgements with robust back-pressure controls.",
+        "Optimized PostgreSQL and Firebird databases with indexing, pooling, and caching, improving throughput and responsiveness.",
+        "Migrated microservices to Java 11 and hardened deployments with Docker and Ansible for secure, repeatable releases."
+      ],
+      "technologies": [
+        "Java 11",
+        "Spring Boot",
+        "PostgreSQL",
+        "Firebird",
+        "RabbitMQ",
+        "Docker",
+        "Ansible",
+        "Microservices",
+        "JUnit",
+        "WireMock"
+      ],
+      "website": "https://www.signify.com"
+    },
+    {
+      "id": "exp-4",
+      "company": "Alteatec IT Solutions",
+      "position": "Head of Department – Casino Management",
+      "location": "Malta",
+      "startDate": "2013-07",
+      "endDate": "2019-03",
+      "description": "Directed architecture and delivery of a full-stack iGaming platform, powering millions of player sessions daily with industry-leading availability and compliance.",
+      "achievements": [
+        "Architected a modular casino platform handling 1M+ daily sessions with 99.98% uptime, covering wallet, bonus engine, CMS, tournaments, and fraud detection.",
+        "Led migration from monolith to Spring Boot microservices, cutting feature delivery time by 40% and enabling elastic horizontal scaling.",
+        "Integrated 30+ third-party systems (payment gateways, slot providers, sportsbooks, messaging services) with resilient REST and MQ contracts.",
+        "Embedded robust KYC, AML, and audit logging to achieve Tier-1 regulator certifications (MGA, UKGC, Curacao), enabling entry into 3 new markets.",
+        "Championed DevOps adoption with containerized workloads, automated CI/CD, and proactive monitoring, reducing deployment rollback incidents by 60%.",
+        "Represented the company at global iGaming conferences, building strategic partnerships and showcasing platform capabilities to B2B clients."
+      ],
+      "technologies": [
+        "Java 8",
+        "Spring Boot",
+        "J2EE",
+        "Angular",
+        "PostgreSQL",
+        "ActiveMQ",
+        "Microservices",
+        "Docker",
+        "CI/CD"
+      ],
+      "website": "https://www.alteatec.com"
+    },
+    {
+      "id": "exp-5",
+      "company": "Rofous Software (Google Client)",
+      "position": "Senior Software Engineer",
+      "location": "Gurugram, India",
+      "startDate": "2012-02",
+      "endDate": "2013-06",
+      "description": "Built large-scale web scraping and data validation frameworks for Google’s hotel price platform.",
+      "achievements": [
+        "Developed a Python/Selenium-based framework to crawl 500+ dynamic, JS-heavy travel sites, scraping over 1M URLs daily.",
+        "Automated price validation pipelines that compared partner data with Google search results, improving accuracy of displayed pricing.",
+        "Optimized scraping reliability with advanced DOM interaction strategies for AJAX-heavy content.",
+        "Delivered daily automated discrepancy reports, giving management real-time insights into data accuracy and partner compliance."
+      ],
+      "technologies": [
+        "Python",
+        "Selenium",
+        "Web Scraping",
+        "Automation",
+        "Data Validation"
+      ],
+      "website": "https://about.google"
+    },
+    {
+      "id": "exp-6",
+      "company": "Infosys Limited (Boeing Client)",
+      "position": "Senior Software Engineer",
+      "location": "Mysuru, India",
+      "startDate": "2007-11",
+      "endDate": "2012-01",
+      "description": "Delivered automation and configuration management tools for Boeing’s aerospace programs, improving efficiency across aircraft interior design processes.",
+      "achievements": [
+        "Owned development of a Python-based automation suite covering 14 applications across domains such as floors and PSU, streamlining airplane interior configuration.",
+        "Captured and validated customer preferences, automating complex workflows in CATIA and Enovia to reduce manual effort and design errors.",
+        "Collaborated closely with Boeing stakeholders through all SDLC phases — requirements, design, implementation, and delivery.",
+        "Improved engineering productivity by automating repetitive design tasks, freeing teams to focus on higher-value engineering work."
+      ],
+      "technologies": [
+        "Python",
+        "CATIA",
+        "ENOVIA",
+        "Automation"
+      ],
+      "website": "https://www.infosys.com"
+    }
+  ],
+  "projects": [
+    {
+      "id": "ecommerce-platform",
+      "title": "E-Commerce Microservices Platform",
+      "description": "Scalable e-commerce platform built with microservices architecture supporting high-traffic loads",
+      "longDescription": "A comprehensive e-commerce solution designed to handle Black Friday-level traffic with 99.99% uptime. Features include real-time inventory management, payment processing, order tracking, and analytics dashboard.",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "AWS",
+        "PostgreSQL",
+        "Redis",
+        "Kafka",
+        "Docker"
+      ],
+      "features": [
+        "Real-time inventory management",
+        "Payment gateway integration",
+        "Advanced search with Elasticsearch",
+        "Order tracking and notifications",
+        "Analytics dashboard",
+        "Mobile-responsive design"
+      ],
+      "challenges": [
+        "Handling 100K+ concurrent users during peak sales",
+        "Ensuring data consistency across microservices",
+        "Implementing circuit breaker patterns for resilience",
+        "Optimizing database queries for performance"
+      ],
+      "outcomes": [
+        "Successfully handled 150K concurrent users",
+        "Achieved 99.99% uptime during Black Friday",
+        "Reduced page load times by 40%",
+        "Increased conversion rates by 25%"
+      ],
+      "image": "/assets/images/ecommerce-platform.png",
+      "images": [
+        "/assets/images/ecommerce/landing-page.png",
+        "/assets/images/ecommerce/registration-page.png",
+        "/assets/images/ecommerce/signin-page.png",
+        "/assets/images/ecommerce/customer-dashboard.png",
+        "/assets/images/ecommerce/provider-dashboard.png",
+        "/assets/images/ecommerce/admin-dashboard.png"
+      ],
+      "demoUrl": "",
+      "sourceUrl": "https://github.com/harshhajela/health-care-parent",
+      "featured": true,
+      "status": "completed"
+    },
+    {
+      "id": "project-2",
+      "title": "Personal Blog - Angular + Contentful",
+      "description": "Modern blog with Contentful CMS, S3 static hosting, SEO, and smooth animations",
+      "longDescription": "Angular 16 SPA that fetches content from Contentful CMS and renders responsive, animated pages (hero + latest articles + contact). Deployed as a static website on AWS S3 with SPA routing fallback. Designed for fast performance, accessibility, and shareable previews.",
+      "technologies": [
+        "Angular",
+        "Contentful CMS",
+        "AWS S3 (Static Hosting)",
+        "TypeScript"
+      ],
+      "features": [
+        "Gradient hero with clear CTA",
+        "Latest Articles feed with responsive cards",
+        "Contact page with info, links, and feature highlights",
+        "Dark / light theme toggle",
+        "SEO metadata, OpenGraph cards, sitemap & RSS",
+        "Content managed via Contentful (no redeploy for new posts)",
+        "SPA routing with index.html fallback on S3",
+        "Reduced-motion friendly animations"
+      ],
+      "challenges": [
+        "SEO & social previews without server-side rendering",
+        "Modeling Contentful types for posts and metadata",
+        "Image optimization and lazy loading for article cards",
+        "S3 static website routing and cache control"
+      ],
+      "outcomes": [
+        "Lighthouse ≥ 95 across Perf/SEO/Best Practices",
+        "Near-zero hosting cost on S3",
+        "Authoring workflow decoupled from code via CMS",
+        "Consistent UX across breakpoints and themes"
+      ],
+      "image": "/assets/images/blog-architecture.png",
+      "images": [],
+      "demoUrl": "https://my-blog-post.harshhajela.com",
+      "sourceUrl": "https://github.com/harshhajela/my-blog-post",
+      "featured": true,
+      "status": "completed"
+    },
+    {
+      "id": "project-3",
+      "title": "VIBE Coding & AI Lab",
+      "description": "Hands-on experiments with generative AI, prompt craft, and VIBE Coding site builds.",
+      "longDescription": "A living playground where I explore upcoming AI capabilities (image generation, LLM prompting, automation) and build small utilities and visual assets. Includes a production website created with VIBE Coding: JK Abrasives (jkabrasives.com), optimized as a fast, static experience.",
+      "technologies": [
+        "VIBE Coding",
+        "OpenAI API",
+        "TypeScript",
+        "Angular",
+        "AWS S3 (Static Hosting)",
+        "CloudFront"
+      ],
+      "features": [
+        "AI prompt libraries and reusable templates",
+        "Soft‑glass, dark UI vector visuals generated via prompts",
+        "Static site build and deploy with VIBE Coding",
+        "SEO metadata and share cards",
+        "Light/Dark theme toggle"
+      ],
+      "challenges": [
+        "Translating abstract ideas into repeatable prompt recipes",
+        "Keeping assets lightweight while maintaining visual quality",
+        "Optimizing static hosting and cache headers for fast loads"
+      ],
+      "outcomes": [
+        "Published JK Abrasives website built with VIBE Coding",
+        "Faster content production using prompt templates",
+        "Consistent brand visuals produced via AI workflows"
+      ],
+      "image": "/assets/images/vibe-ai-lab.png",
+      "images": [],
+      "demoUrl": "https://jkabrasives.com",
+      "sourceUrl": "",
+      "featured": true,
+      "status": "ongoing"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-1",
+      "name": "AWS Certified Developer - Associate",
+      "issuer": "Amazon Web Services",
+      "issueDate": "2021-08",
+      "expiryDate": "2024-08",
+      "credentialId": "",
+      "verificationUrl": "https://www.credly.com/badges/ad5c72f2-0606-49a9-b258-f2539906c11b",
+      "badge": "/assets/images/AWS-Badge.png"
+    },
+    {
+      "id": "cert-2",
+      "name": "AgilePM: Practictioner",
+      "issuer": "APMG International",
+      "issueDate": "2022-01",
+      "expiryDate": "2027-01",
+      "credentialId": "",
+      "verificationUrl": "https://www.credly.com/badges/20f8e2a5-614b-475e-b98e-0175085a6a43",
+      "badge": "/assets/images/AgilePM-Badge.png"
+    }
+  ]
+}

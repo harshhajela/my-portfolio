@@ -1,0 +1,157 @@
+.animate-glow {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.dark .animate-glow {
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.shadow-glass-xl {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.dark .shadow-glass-xl {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* === Rotating / Typing keyword effects === */
+
+/* Fade rotation */
+.rotate-container {
+  position: relative;
+  display: inline-block;
+
+  /* micro-nudge to align baseline with preceding text */
+  min-width: 7ch;
+  /* keep layout steady on desktop */
+  height: 1em;
+  /* match line-height */
+  text-align: left;
+  line-height: inherit;
+}
+
+.rotate-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  white-space: nowrap;
+  opacity: 0;
+  animation: rotateFade var(--total) linear infinite both;
+  line-height: inherit;
+  display: block;
+}
+
+@keyframes rotateFade {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .rotate-item {
+    animation: none;
+    opacity: 1;
+    position: static;
+    display: inline;
+    transform: none;
+  }
+}
+
+/* Typing caret (used when rotateMode === 'type') */
+.typing-container .caret {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background: currentColor;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: -2px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .rotate-container {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 1em;
+    min-width: auto;
+  }
+
+  .rotate-item {
+    text-align: center;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    animation: rotateFadeMobile var(--total) linear infinite both;
+  }
+}
+
+@keyframes rotateFadeMobile {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

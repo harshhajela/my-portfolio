@@ -1,0 +1,9 @@
+.skill-progress[data-target-width] {
+  animation: progressAnimation 2s ease-out forwards;
+}
+
+@keyframes progressAnimation {
+  to {
+    width: var(--target-width, 0%);
+  }
+}

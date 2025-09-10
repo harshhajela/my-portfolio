@@ -1,0 +1,238 @@
+<section 
+  id="experience" 
+  #experienceSection
+  class="section-padding bg-neutral-50 dark:bg-neutral-900"
+  [attr.aria-labelledby]="'experience-title'"
+>
+  <div class="container-max-width">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 id="experience-title" class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-900 dark:text-white mb-6">
+          Professional Experience
+        </h2>
+        <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+          Building enterprise solutions and leading development teams across diverse industries
+        </p>
+      </div>
+
+      <!-- Experience Cards Grid -->
+      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+        <div 
+          *ngFor="let exp of experiences; trackBy: trackByExperience; index as i"
+          class="animate-on-scroll experience-card"
+          [style.animation-delay]="(i * 0.1) + 's'"
+        >
+          <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col group hover:border-primary-300 dark:hover:border-primary-600">
+            <!-- Header -->
+            <div class="mb-4">
+              <div class="flex items-start justify-between gap-4 mb-3">
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
+                    {{ exp.position }}
+                  </h3>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="text-base font-semibold text-primary-600 dark:text-primary-400">
+                      {{ exp.company }}
+                    </span>
+                    <a
+                      *ngIf="exp.website"
+                      [href]="exp.website"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors p-1 -m-1 rounded"
+                      [attr.aria-label]="'Visit ' + exp.company + ' website (opens in new tab)'"
+                    >
+                      <lucide-icon [img]="externalLinkIcon" class="w-4 h-4"></lucide-icon>
+                    </a>
+                  </div>
+                </div>
+                
+                <!-- Duration Badge -->
+                <div class="shrink-0">
+                  <div class="inline-flex items-center px-3 py-1.5 bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300 text-xs font-semibold rounded-lg">
+                    {{ calculateDuration(exp.startDate, exp.endDate) }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-1.5 text-sm text-neutral-500 dark:text-neutral-400 mb-4">
+                <div class="flex items-center gap-2">
+                  <lucide-icon [img]="mapPinIcon" class="w-4 h-4"></lucide-icon>
+                  {{ exp.location }}
+                </div>
+                <div class="flex items-center gap-2">
+                  <lucide-icon [img]="calendarIcon" class="w-4 h-4"></lucide-icon>
+                  {{ formatDateRange(exp.startDate, exp.endDate) }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <p class="text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed flex-grow text-sm line-clamp-3">
+              {{ exp.description }}
+            </p>
+
+            <!-- Technologies Preview -->
+            <div class="mb-4">
+              <h4 class="font-semibold text-neutral-900 dark:text-white mb-2 text-sm">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span 
+                  *ngFor="let tech of exp.technologies.slice(0, 4)"
+                  class="px-2.5 py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 text-xs rounded-md border border-neutral-200 dark:border-neutral-600"
+                >
+                  {{ tech }}
+                </span>
+                <span
+                  *ngIf="exp.technologies.length > 4"
+                  class="px-2.5 py-1 text-neutral-500 dark:text-neutral-400 text-xs font-medium"
+                >
+                  +{{ exp.technologies.length - 4 }} more
+                </span>
+              </div>
+            </div>
+
+            <!-- View Details Button -->
+            <div class="mt-auto pt-2">
+              <button
+                (click)="openExperienceModal(exp)"
+                class="w-full group inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-50 dark:bg-primary-900/20 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 font-medium text-sm rounded-lg border border-primary-200 dark:border-primary-800 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+              >
+                View Details
+                <lucide-icon 
+                  [img]="chevronRightIcon" 
+                  class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+                ></lucide-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career Summary -->
+      <div class="animate-on-scroll" style="animation-delay: 0.6s;">
+        <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-8 shadow-lg text-center">
+          <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-white mb-6">
+            Career Highlights
+          </h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">17+</div>
+              <div class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Years Experience</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">500K+</div>
+              <div class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Users Impacted</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">15+</div>
+              <div class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Team Members Led</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">99.9%</div>
+              <div class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Uptime Achieved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience Modal -->
+  <div
+    *ngIf="selectedExperience"
+    class="fixed inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    (click)="closeExperienceModal()"
+  >
+    <div 
+      class="bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-neutral-200 dark:border-neutral-700"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="sticky top-0 bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700 p-6 flex items-center justify-between rounded-t-2xl">
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-1">
+            {{ selectedExperience.position }}
+          </h2>
+          <p class="text-lg text-primary-600 dark:text-primary-400 font-semibold">
+            {{ selectedExperience.company }}
+          </p>
+        </div>
+        <button
+          (click)="closeExperienceModal()"
+          class="p-2 rounded-lg text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+          [attr.aria-label]="'Close experience details'"
+        >
+          <lucide-icon [img]="closeIcon" class="w-6 h-6"></lucide-icon>
+        </button>
+      </div>
+
+      <div class="p-6">
+        <!-- Company Info -->
+        <div class="flex flex-wrap gap-4 mb-6 text-sm text-neutral-600 dark:text-neutral-300">
+          <div class="flex items-center gap-2">
+            <lucide-icon [img]="mapPinIcon" class="w-4 h-4"></lucide-icon>
+            {{ selectedExperience.location }}
+          </div>
+          <div class="flex items-center gap-2">
+            <lucide-icon [img]="calendarIcon" class="w-4 h-4"></lucide-icon>
+            {{ formatDateRange(selectedExperience.startDate, selectedExperience.endDate) }}
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 text-xs font-semibold rounded-lg border border-primary-200 dark:border-primary-800">
+              {{ calculateDuration(selectedExperience.startDate, selectedExperience.endDate) }}
+            </span>
+          </div>
+          <a
+            *ngIf="selectedExperience.website"
+            [href]="selectedExperience.website"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+          >
+            <lucide-icon [img]="externalLinkIcon" class="w-4 h-4"></lucide-icon>
+            Visit Website
+          </a>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-3">About the Role</h3>
+          <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            {{ selectedExperience.description }}
+          </p>
+        </div>
+
+        <!-- Technologies -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Technologies Used</h3>
+          <div class="flex flex-wrap gap-2">
+            <span 
+              *ngFor="let tech of selectedExperience.technologies"
+              class="px-3 py-1.5 bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 text-sm rounded-lg border border-neutral-200 dark:border-neutral-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-700 dark:hover:text-primary-300 hover:border-primary-200 dark:hover:border-primary-800 transition-colors"
+            >
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Key Achievements</h3>
+          <ul class="space-y-3">
+            <li 
+              *ngFor="let achievement of selectedExperience.achievements"
+              class="flex items-start gap-3"
+            >
+              <div class="w-2 h-2 bg-primary-500 rounded-full mt-2.5 shrink-0"></div>
+              <span class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                {{ achievement }}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

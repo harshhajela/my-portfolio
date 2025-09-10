@@ -1,0 +1,105 @@
+<section 
+  id="skills" 
+  #skillsSection
+  class="section-padding bg-neutral-50 dark:bg-neutral-800"
+  [attr.aria-labelledby]="'skills-title'"
+>
+  <div class="container-max-width">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 id="skills-title" class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Skills & Expertise
+        </h2>
+        <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+          A comprehensive toolkit for building modern, scalable applications
+        </p>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div 
+          *ngFor="let category of skillCategories; trackBy: trackByCategory; index as i"
+          class="animate-on-scroll"
+          [style.animation-delay]="(i * 0.1) + 's'"
+        >
+          <div class="glass-card rounded-3xl p-8 shadow-glass-lg h-full">
+            <!-- Category Header -->
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg">
+                <lucide-icon [img]="getCategoryIcon(category.name)" class="w-6 h-6 text-white"></lucide-icon>
+              </div>
+              <div>
+                <h3 class="text-xl font-display font-semibold text-neutral-900 dark:text-neutral-100">
+                  {{ category.name }}
+                </h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  {{ category.skills.length }} skills
+                </p>
+              </div>
+            </div>
+
+            <!-- Skills List -->
+            <div class="flex flex-wrap gap-3">
+              <span 
+                *ngFor="let skill of category.skills; trackBy: trackBySkill"
+                class="group inline-flex items-center px-4 py-2 bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-700 hover:from-primary-50 hover:to-accent-50 dark:hover:from-primary-900/20 dark:hover:to-accent-900/20 text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 font-medium rounded-full border border-neutral-200 dark:border-neutral-600 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              >
+                {{ skill.name }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Summary -->
+      <div class="mt-16 animate-on-scroll" style="animation-delay: 0.6s;">
+        <div class="glass-card rounded-3xl p-8 shadow-glass-lg">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-display font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+              Technology Philosophy
+            </h3>
+            <p class="text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto leading-relaxed">
+              I believe in choosing the right tool for the job, focusing on clean architecture, 
+              maintainable code, and continuous learning. My approach emphasizes building robust, 
+              scalable solutions while keeping up with evolving industry best practices.
+            </p>
+          </div>
+          
+          <!-- Key Principles -->
+          <div class="grid md:grid-cols-3 gap-6 mt-8">
+            <div class="text-center p-6 rounded-2xl bg-primary-50 dark:bg-primary-900/20">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary-500 flex items-center justify-center">
+                <lucide-icon [img]="codeIcon" class="w-8 h-8 text-white"></lucide-icon>
+              </div>
+              <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Clean Code</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                Writing maintainable, readable, and well-documented code
+              </p>
+            </div>
+            
+            <div class="text-center p-6 rounded-2xl bg-accent-50 dark:bg-accent-900/20">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-accent-500 flex items-center justify-center">
+                <lucide-icon [img]="targetIcon" class="w-8 h-8 text-white"></lucide-icon>
+              </div>
+              <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Performance</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                Optimizing applications for speed, efficiency, and scalability
+              </p>
+            </div>
+            
+            <div class="text-center p-6 rounded-2xl bg-primary-50 dark:bg-primary-900/20">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary-500 flex items-center justify-center">
+                <lucide-icon [img]="usersIcon" class="w-8 h-8 text-white"></lucide-icon>
+              </div>
+              <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Collaboration</h4>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                Working effectively in cross-functional teams and mentoring others
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
