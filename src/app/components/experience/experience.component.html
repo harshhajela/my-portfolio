@@ -29,11 +29,11 @@
               <div class="flex items-start justify-between gap-4 mb-3">
                 <div class="flex-1">
                   <h3 class="text-lg font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
-                    {{ exp.position }}
+                    {{ exp.company }}
                   </h3>
                   <div class="flex items-center gap-2 mb-2">
                     <span class="text-base font-semibold text-primary-600 dark:text-primary-400">
-                      {{ exp.company }}
+                      {{ exp.position }}
                     </span>
                     <a
                       *ngIf="exp.website"
@@ -153,10 +153,10 @@
       <div class="sticky top-0 bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700 p-6 flex items-center justify-between rounded-t-2xl">
         <div>
           <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-1">
-            {{ selectedExperience.position }}
+            {{ selectedExperience.company }}
           </h2>
           <p class="text-lg text-primary-600 dark:text-primary-400 font-semibold">
-            {{ selectedExperience.company }}
+            {{ selectedExperience.position }}
           </p>
         </div>
         <button

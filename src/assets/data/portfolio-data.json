@@ -5,7 +5,7 @@
     "tagline": "Engineering excellence in architecture, cloud, and user experience",
     "bio": "Passionate full-stack engineer with 17+ years of experience designing and delivering enterprise-grade solutions across diverse domains, including aerospace, large-scale technology platforms, online gambling, smart city and IoT, and multi-domain technology consultancy. Adept at building scalable architectures, driving cloud adoption, and leading cross-functional teams.",
     "avatar": "/assets/images/harsh-hajela.png",
-    "resumeUrl": "/assets/files/harsh-hajela-resume.pdf",
+    "resumeUrl": "/assets/harsh-hajela-resume.pdf",
     "rotatingKeywords": [
       "AI",
       "Cloud",
@@ -58,7 +58,7 @@
       ],
       "author": "Harsh Hajela",
       "ogImage": "/assets/images/harsh-hajela-og.jpg",
-      "canonicalUrl": "https://harshhajela.dev"
+      "canonicalUrl": "https://portfolio.harshhajela.com"
     }
   },
   "navigation": [
@@ -317,7 +317,7 @@
       "position": "Senior Software Engineer",
       "location": "London, UK",
       "startDate": "2024-02",
-      "endDate": "2025-09",
+      "endDate": "Present",
       "description": "Led full-stack engineering for data-intensive platforms, driving cloud-native delivery and database modernization initiatives.",
       "achievements": [
         "Architected a real-time market data pipeline handling 50K+ price updates/sec with sub-100ms latency.",

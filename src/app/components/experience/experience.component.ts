@@ -54,7 +54,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
       month: 'short'
     });
 
-    if (!endDate) {
+    if (!endDate || endDate === 'Present') {
       return `${startFormatted} - Present`;
     }
 
@@ -69,7 +69,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
 
   calculateDuration(startDate: string, endDate: string | null): string {
     const start = new Date(startDate + '-01');
-    const end = endDate ? new Date(endDate + '-01') : new Date();
+    const end = (endDate && endDate !== 'Present') ? new Date(endDate + '-01') : new Date();
 
     const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
 
