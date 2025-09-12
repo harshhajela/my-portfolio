@@ -50,9 +50,15 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
   <link rel="manifest" href="/assets/manifest.json">
   
-  <!-- Preconnect to Google Fonts -->
+  <!-- Performance Optimization -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+  <!-- Critical Resource Hints -->
+  <link rel="preload" href="/assets/data/portfolio-data.json" as="fetch" type="application/json" crossorigin>
+  <link rel="prefetch" href="/assets/harsh-hajela-resume.pdf">
   
   <!-- Structured Data -->
   <script type="application/ld+json">
