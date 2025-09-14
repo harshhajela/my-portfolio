@@ -8,10 +8,15 @@
       <div class="flex items-center">
         <button 
           (click)="scrollToTop()"
-          class="text-xl md:text-2xl font-display font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-lg px-2 py-1"
+          class="p-2 hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-lg"
           [attr.aria-label]="'Go to top of page'"
         >
-          {{ personalInfo.name }}
+          <img 
+            [src]="currentTheme === 'light' ? '/assets/images/harsh_hajela_logo_light.png' : '/assets/images/harsh_hajela_logo_dark.png'"
+            [alt]="personalInfo.name + ' Logo'"
+            class="h-8 md:h-10 w-auto object-contain transition-opacity duration-200"
+            loading="eager"
+          >
         </button>
       </div>
 

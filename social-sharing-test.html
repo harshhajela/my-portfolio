@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Sharing Preview - Harsh Hajela Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .preview-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      background: #f9f9f9;
+    }
+    .meta-tags {
+      background: #e9ecef;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 12px;
+      overflow-x: auto;
+    }
+    .logo-preview {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin: 20px 0;
+    }
+    .logo-preview img {
+      height: 40px;
+      width: auto;
+    }
+    .theme-section {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    .theme-section.dark {
+      background: #2d3748;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Portfolio Social Sharing & Logo Preview</h1>
+  
+  <div class="preview-card">
+    <h2>📱 Social Sharing Preview</h2>
+    <p>When your portfolio is shared on social platforms, it will display:</p>
+    
+    <div style="border-left: 4px solid #0066cc; padding-left: 15px; margin: 15px 0;">
+      <h3 style="margin-top: 0; color: #0066cc;">Harsh Hajela - Senior Full Stack Engineer</h3>
+      <p style="color: #666; margin: 5px 0;">Experienced full-stack engineer specializing in Java, Spring Boot, Angular, microservices, and AWS cloud solutions.</p>
+      <small style="color: #999;">portfolio.harshhajela.com</small>
+    </div>
+  </div>
+
+  <div class="preview-card">
+    <h2>🎨 Logo Implementation</h2>
+    <p>Your header now uses theme-aware logo images:</p>
+    
+    <div class="theme-section">
+      <h3>☀️ Light Theme</h3>
+      <div class="logo-preview">
+        <img src="src/assets/images/harsh_hajela_logo_light.png" alt="Light Theme Logo" style="background: white; padding: 10px; border-radius: 4px;">
+        <span>harsh_hajela_logo_light.png</span>
+      </div>
+    </div>
+    
+    <div class="theme-section dark">
+      <h3>🌙 Dark Theme</h3>
+      <div class="logo-preview">
+        <img src="src/assets/images/harsh_hajela_logo_dark.png" alt="Dark Theme Logo" style="background: #2d3748; padding: 10px; border-radius: 4px;">
+        <span>harsh_hajela_logo_dark.png</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-card">
+    <h2>🔧 Technical Implementation</h2>
+    
+    <h3>Header Component Changes:</h3>
+    <div class="meta-tags">
+&lt;img 
+  [src]="currentTheme === 'light' ? '/assets/images/harsh_hajela_logo_light.png' : '/assets/images/harsh_hajela_logo_dark.png'"
+  [alt]="personalInfo.name + ' Logo'"
+  class="h-8 md:h-10 w-auto object-contain transition-opacity duration-200"
+  loading="eager"
+&gt;
+    </div>
+
+    <h3>Social Meta Tags Added:</h3>
+    <div class="meta-tags">
+&lt;!-- Open Graph / Facebook --&gt;
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta property="og:url" content="https://portfolio.harshhajela.com"&gt;
+&lt;meta property="og:title" content="Harsh Hajela - Senior Full Stack Engineer"&gt;
+&lt;meta property="og:description" content="Experienced full-stack engineer specializing in Java, Spring Boot, Angular, microservices, and AWS cloud solutions."&gt;
+&lt;meta property="og:image" content="https://portfolio.harshhajela.com/assets/images/harsh-hajela-og.jpg"&gt;
+
+&lt;!-- Twitter --&gt;
+&lt;meta property="twitter:card" content="summary_large_image"&gt;
+&lt;meta property="twitter:title" content="Harsh Hajela - Senior Full Stack Engineer"&gt;
+&lt;meta property="twitter:description" content="Experienced full-stack engineer specializing in Java, Spring Boot, Angular, microservices, and AWS cloud solutions."&gt;
+    </div>
+  </div>
+
+  <div class="preview-card">
+    <h2>✅ Deployment Checklist</h2>
+    <ul>
+      <li>✅ Logo images added to header with theme switching</li>
+      <li>✅ SEO meta tags updated with correct domain (portfolio.harshhajela.com)</li>
+      <li>✅ Open Graph tags for social media sharing</li>
+      <li>✅ Twitter Card meta tags</li>
+      <li>✅ Structured data (JSON-LD) updated with current company</li>
+      <li>✅ Build tested successfully - logos included in output</li>
+    </ul>
+    
+    <p><strong>Next Steps:</strong></p>
+    <ul>
+      <li>Deploy to AWS S3 using: <code>npm run build:optimized</code></li>
+      <li>Test social sharing on Facebook, Twitter, LinkedIn</li>
+      <li>Verify logo displays correctly in both light/dark themes</li>
+    </ul>
+  </div>
+
+  <div class="preview-card">
+    <h2>🌐 Domain Configuration</h2>
+    <p>Your portfolio is configured for: <strong>https://portfolio.harshhajela.com</strong></p>
+    <p>Make sure your DNS and SSL certificates are set up for this domain.</p>
+  </div>
+</body>
+</html>
