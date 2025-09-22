@@ -433,7 +433,7 @@
     },
     {
       "id": "exp-5",
-      "company": "Rofous Software (Google Client)",
+      "company": "Global Logic (Google Client)",
       "position": "Senior Software Engineer",
       "location": "Gurugram, India",
       "startDate": "2012-02",
@@ -452,7 +452,7 @@
         "Automation",
         "Data Validation"
       ],
-      "website": "https://about.google"
+      "website": "https://www.globallogic.com/"
     },
     {
       "id": "exp-6",
@@ -479,9 +479,93 @@
   ],
   "projects": [
     {
+      "id": "ai-agents",
+      "title": "AI Agents & Automations Website",
+      "description": "Collection of free demo AI agents to explore and test.",
+      "longDescription": "A showcase website hosting multiple AI-powered demo agents. Each agent highlights a unique workflow, such as research, summarization, and automation. Built to demonstrate real-world AI integrations with APIs and cloud deployment. Users can try agents via interactive UIs and explore backend designs.",
+      "technologies": [
+        "LangChain",
+        "OpenRouter",
+        "Tavily",
+        "Google Sheets API",
+        "Python",
+        "FastAPI",
+        "Angular",
+        "TypeScript",
+        "Tailwind CSS",
+        "AWS S3",
+        "AWS EC2",
+        "Docker"
+      ],
+      "features": [
+        "Interactive landing page showcasing multiple AI agents",
+        "Agent cards with one-click access to demos",
+        "Detailed agent pages explaining business use cases",
+        "Live integration with APIs to simulate real workflows",
+        "Automatic history tracking of queries and results",
+        "Deployed securely on AWS for global access"
+      ],
+      "challenges": [
+        "Designing intuitive experiences for non-technical users",
+        "Ensuring responsiveness and reliability across diverse use cases",
+        "Balancing openness of demos with security and cost control"
+      ],
+      "outcomes": [
+        "Helps businesses visualize how AI agents can streamline workflows",
+        "Demonstrates productivity boosts through automation and research",
+        "Provides a reusable foundation to quickly add and test new agents",
+        "Strengthens portfolio by showing tangible, hands-on AI applications"
+      ],
+      "image": "/assets/images/ai-agents-card.png",
+      "images": [],
+      "demoUrl": "https://ai-agents.harshhajela.com",
+      "sourceUrl": "https://github.com/harshhajela/ai-agents-langchain",
+      "featured": true,
+      "status": "active"
+    },
+    {
+      "id": "vibe-coding",
+      "title": "VIBE Coding & AI‑Assisted Websites",
+      "description": "AI‑driven workflows to design, generate, and ship fast static sites (JK Abrasives + Portfolio).",
+      "longDescription": "A living playground for AI‑assisted web building. Using repo‑aware agents (Claude Code, OpenAI Codex/ChatGPT) and prompt libraries to generate visuals, scaffold components, and automate deploys. Output includes a production site for JK Abrasives (jkabrasives.com) and my personal portfolio (harshhajela.dev), both optimized as fast, static experiences on S3/CloudFront.",
+      "technologies": [
+        "Claude Code",
+        "ChatGPT/Codex CLI",
+        "Angular",
+        "Tailwind CSS",
+        "AWS S3 (Static Hosting)",
+        "CloudFront",
+        "GitHub Actions"
+      ],
+      "features": [
+        "AI prompt libraries and reusable templates",
+        "Repo‑aware AI CLI/IDE workflows (Claude Code, Codex)",
+        "Soft‑glass, dark UI vector visuals generated via prompts",
+        "Static site build and deploy to S3/CloudFront",
+        "SEO metadata and share cards",
+        "Light/Dark theme toggle"
+      ],
+      "challenges": [
+        "Translating abstract ideas into repeatable prompt recipes",
+        "Aligning AI‑generated visuals with brand while keeping assets lightweight",
+        "Setting up reliable static hosting and cache headers for fast loads"
+      ],
+      "outcomes": [
+        "Published JK Abrasives and personal portfolio websites",
+        "Faster content production using prompt templates and repo‑aware agents",
+        "Consistent brand visuals via AI workflows with measurable performance budgets"
+      ],
+      "image": "/assets/images/vibe-ai-lab.png",
+      "images": [],
+      "demoUrl": "https://jkabrasives.com",
+      "sourceUrl": "https://github.com/harshhajela/my-portfolio",
+      "featured": true,
+      "status": "ongoing"
+    },
+    {
       "id": "ecommerce-platform",
       "title": "E-Commerce Microservices Platform",
-      "description": "Scalable e-commerce platform built with microservices architecture supporting high-traffic loads",
+      "description": "Scalable e-commerce platform built with Java Springboot Microservices Architecture supporting high-traffic loads",
       "longDescription": "A comprehensive e-commerce solution designed to handle Black Friday-level traffic with 99.99% uptime. Features include real-time inventory management, payment processing, order tracking, and analytics dashboard.",
       "technologies": [
         "Java",
@@ -567,46 +651,6 @@
       "sourceUrl": "https://github.com/harshhajela/my-blog-post",
       "featured": true,
       "status": "completed"
-    },
-    {
-      "id": "vibe-coding",
-      "title": "VIBE Coding & AI‑Assisted Site Builds",
-      "description": "AI‑driven workflows to design, generate, and ship fast static sites (JK Abrasives + Portfolio).",
-      "longDescription": "A living playground for AI‑assisted web building. Using repo‑aware agents (Claude Code, OpenAI Codex/ChatGPT) and prompt libraries to generate visuals, scaffold components, and automate deploys. Output includes a production site for JK Abrasives (jkabrasives.com) and my personal portfolio (harshhajela.dev), both optimized as fast, static experiences on S3/CloudFront.",
-      "technologies": [
-        "Claude Code",
-        "ChatGPT/Codex CLI",
-        "Angular",
-        "Tailwind CSS",
-        "AWS S3 (Static Hosting)",
-        "CloudFront",
-        "GitHub Actions"
-      ],
-      "features": [
-        "AI prompt libraries and reusable templates",
-        "Repo‑aware AI CLI/IDE workflows (Claude Code, Codex)",
-        "Soft‑glass, dark UI vector visuals generated via prompts",
-        "Static site build and deploy to S3/CloudFront",
-        "SEO metadata and share cards",
-        "Light/Dark theme toggle"
-      ],
-      "challenges": [
-        "Translating abstract ideas into repeatable prompt recipes",
-        "Aligning AI‑generated visuals with brand while keeping assets lightweight",
-        "Setting up reliable static hosting and cache headers for fast loads"
-      ],
-      "outcomes": [
-        "Published JK Abrasives and personal portfolio websites",
-        "Faster content production using prompt templates and repo‑aware agents",
-        "Consistent brand visuals via AI workflows with measurable performance budgets"
-      ],
-      "image": "/assets/images/vibe-ai-lab.png",
-      "images": [],
-      "demoUrl": "https://harshhajela.dev",
-      "secondaryDemoUrl": "https://jkabrasives.com",
-      "sourceUrl": "https://github.com/harshhajela/my-portfolio",
-      "featured": true,
-      "status": "ongoing"
     }
   ],
   "certifications": [
