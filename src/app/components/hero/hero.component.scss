@@ -421,6 +421,84 @@
   }
 }
 
+/* Strict no-overlap rotation animation for keywords */
+@keyframes rotateFadeNoOverlap {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px) scale(0.8) translateZ(0);
+    transform: translateY(20px) scale(0.8) translateZ(0);
+  }
+  3% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  9% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  10% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px) scale(0.8) translateZ(0);
+    transform: translateY(-20px) scale(0.8) translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px) scale(0.8) translateZ(0);
+    transform: translateY(-20px) scale(0.8) translateZ(0);
+  }
+}
+
+@-webkit-keyframes rotateFadeNoOverlap {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px) scale(0.8) translateZ(0);
+    transform: translateY(20px) scale(0.8) translateZ(0);
+  }
+  3% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  9% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  10% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px) scale(0.8) translateZ(0);
+    transform: translateY(-20px) scale(0.8) translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px) scale(0.8) translateZ(0);
+    transform: translateY(-20px) scale(0.8) translateZ(0);
+  }
+}
+
+.rotate-item-no-overlap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  white-space: nowrap;
+  opacity: 0;
+  animation: rotateFadeNoOverlap var(--total) linear infinite both;
+  line-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-transform: translateY(10px) translateZ(0);
+  transform: translateY(10px) translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: rotateFadeNoOverlap var(--total) linear infinite both;
+  will-change: opacity, transform;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 1024px) {
   .rotate-container,
@@ -446,7 +524,8 @@
 
   .rotate-item,
   .rotate-item-enhanced,
-  .rotate-item-secondary {
+  .rotate-item-secondary,
+  .rotate-item-no-overlap {
     text-align: center;
     left: 0;
     right: 0;
@@ -466,6 +545,12 @@
   .rotate-item-secondary {
     -webkit-animation: rotateFadeSecondaryMobile var(--total) linear infinite both;
     animation: rotateFadeSecondaryMobile var(--total) linear infinite both;
+    will-change: opacity, transform;
+  }
+
+  .rotate-item-no-overlap {
+    -webkit-animation: rotateFadeNoOverlapMobile var(--total) linear infinite both;
+    animation: rotateFadeNoOverlapMobile var(--total) linear infinite both;
     will-change: opacity, transform;
   }
 }
@@ -597,5 +682,61 @@
     opacity: 0;
     -webkit-transform: translateY(-10px) scale(0.95) translateZ(0);
     transform: translateY(-10px) scale(0.95) translateZ(0);
+  }
+}
+
+@keyframes rotateFadeNoOverlapMobile {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px) scale(0.9) translateZ(0);
+    transform: translateY(15px) scale(0.9) translateZ(0);
+  }
+  3% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  9% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  10% {
+    opacity: 0;
+    -webkit-transform: translateY(-15px) scale(0.9) translateZ(0);
+    transform: translateY(-15px) scale(0.9) translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-15px) scale(0.9) translateZ(0);
+    transform: translateY(-15px) scale(0.9) translateZ(0);
+  }
+}
+
+@-webkit-keyframes rotateFadeNoOverlapMobile {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15px) scale(0.9) translateZ(0);
+    transform: translateY(15px) scale(0.9) translateZ(0);
+  }
+  3% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  9% {
+    opacity: 1;
+    -webkit-transform: translateY(0px) scale(1) translateZ(0);
+    transform: translateY(0px) scale(1) translateZ(0);
+  }
+  10% {
+    opacity: 0;
+    -webkit-transform: translateY(-15px) scale(0.9) translateZ(0);
+    transform: translateY(-15px) scale(0.9) translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-15px) scale(0.9) translateZ(0);
+    transform: translateY(-15px) scale(0.9) translateZ(0);
   }
 }

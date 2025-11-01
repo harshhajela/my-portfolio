@@ -104,6 +104,7 @@ export interface PersonalInfo {
   rotatingKeywords: string[];
   rotateInterval: number;
   rotateMode: string;
+  deliveryKeywords: string[]
 }
 
 export interface PortfolioData {
