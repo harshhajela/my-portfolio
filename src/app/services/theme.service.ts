@@ -21,12 +21,14 @@ export class ThemeService {
       if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
         return savedTheme;
       }
-      
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
+
+      // If user has a system preference, respect it
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'light';
       }
     }
-    return 'light';
+    // Default to dark mode
+    return 'dark';
   }
 
   private initializeTheme(): void {

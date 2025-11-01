@@ -1,3 +1,65 @@
+/* Enhanced aspect ratio */
 .aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+/* Enhanced card styling for mobile */
+@media (max-width: 768px) {
+  .group {
+    margin-bottom: 0.5rem;
+  }
+
+  .glass-card {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Optimize touch interactions */
+  .glass-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Smooth grid transitions */
+@media (min-width: 768px) {
+  .group {
+    min-height: 100%;
+  }
+
+  .glass-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enhanced hover effects for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .glass-card {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .dark .group:hover .glass-card {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.3),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
 }
