@@ -78,14 +78,11 @@
 /* Rotating Text Containers */
 .rotate-container-secondary {
   position: relative;
-  display: inline-block;
-  min-width: 15ch;
-  min-height: 2.5em;
+  display: block;
+  width: 100%;
+  min-height: 4em;
   text-align: center;
-  line-height: 1.4;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+  line-height: 1.5;
   overflow: visible;
 }
 
@@ -96,16 +93,17 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  white-space: nowrap;
+  width: 100%;
+  min-height: 4em;
+  white-space: normal;
+  word-wrap: break-word;
   opacity: 0;
-  line-height: inherit;
+  line-height: 1.5;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(5px) translateZ(0);
-  backface-visibility: hidden;
-  will-change: opacity, transform;
+  padding: 0.5rem 1rem;
+  z-index: 1;
 }
 
 .rotate-item-secondary {
@@ -118,17 +116,21 @@
 
 /* Animations */
 @keyframes rotateFadeSecondary {
-  0% { opacity: 0; transform: translateY(15px) scale(0.9) translateZ(0); }
-  8% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  22% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  30%, 100% { opacity: 0; transform: translateY(-15px) scale(0.9) translateZ(0); }
+  0% { opacity: 0; visibility: hidden; }
+  1% { opacity: 0; visibility: visible; }
+  8% { opacity: 1; visibility: visible; }
+  22% { opacity: 1; visibility: visible; }
+  30% { opacity: 0; visibility: visible; }
+  31%, 100% { opacity: 0; visibility: hidden; }
 }
 
 @keyframes rotateFadeNoOverlap {
-  0% { opacity: 0; transform: translateY(20px) scale(0.8) translateZ(0); }
-  3% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  9% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  10%, 100% { opacity: 0; transform: translateY(-20px) scale(0.8) translateZ(0); }
+  0% { opacity: 0; visibility: hidden; }
+  1% { opacity: 0; visibility: visible; }
+  3% { opacity: 1; visibility: visible; }
+  9% { opacity: 1; visibility: visible; }
+  10% { opacity: 0; visibility: visible; }
+  11%, 100% { opacity: 0; visibility: hidden; }
 }
 
 /* Typing caret */
@@ -152,11 +154,11 @@
     display: block;
     width: 100%;
     text-align: center;
-    min-width: auto;
-    min-height: 3em;
+    min-height: 5em;
     height: auto;
     overflow: visible;
-    line-height: 1.5;
+    line-height: 1.6;
+    padding: 1rem 0;
   }
 
   .rotate-item-secondary,
@@ -165,35 +167,15 @@
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 3em;
-    padding: 0.5em 0;
+    min-height: 5em;
+    padding: 1rem;
+    font-size: 1.1rem;
   }
-
-  .rotate-item-secondary {
-    animation: rotateFadeSecondaryMobile var(--total) linear infinite both;
-  }
-
-  .rotate-item-no-overlap {
-    animation: rotateFadeNoOverlapMobile var(--total) linear infinite both;
-  }
-}
-
-@keyframes rotateFadeSecondaryMobile {
-  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
-  8% { opacity: 1; transform: translateY(0) scale(1); }
-  22% { opacity: 1; transform: translateY(0) scale(1); }
-  30%, 100% { opacity: 0; transform: translateY(-20px) scale(0.95); }
-}
-
-@keyframes rotateFadeNoOverlapMobile {
-  0% { opacity: 0; transform: translateY(25px) scale(0.9); }
-  3% { opacity: 1; transform: translateY(0) scale(1); }
-  9% { opacity: 1; transform: translateY(0) scale(1); }
-  10%, 100% { opacity: 0; transform: translateY(-25px) scale(0.9); }
 }
 
 /* Reduced motion */
