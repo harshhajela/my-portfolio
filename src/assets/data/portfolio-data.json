@@ -486,7 +486,7 @@
   "projects": [
     {
       "id": "ai-agents",
-      "title": "AI Agents & Automations Website",
+      "title": "AI Agents Hub",
       "description": "Collection of free demo AI agents to explore and test.",
       "longDescription": "A showcase website hosting multiple AI-powered demo agents. Each agent highlights a unique workflow, such as research, summarization, and automation. Built to demonstrate real-world AI integrations with APIs and cloud deployment. Users can try agents via interactive UIs and explore backend designs.",
       "technologies": [

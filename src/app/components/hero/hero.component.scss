@@ -80,12 +80,13 @@
   position: relative;
   display: inline-block;
   min-width: 15ch;
-  height: 1.5em;
+  min-height: 2.5em;
   text-align: center;
-  line-height: inherit;
+  line-height: 1.4;
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+  overflow: visible;
 }
 
 /* Rotating Items */
@@ -152,14 +153,24 @@
     width: 100%;
     text-align: center;
     min-width: auto;
-    height: 1.5em;
+    min-height: 3em;
+    height: auto;
+    overflow: visible;
+    line-height: 1.5;
   }
 
   .rotate-item-secondary,
   .rotate-item-no-overlap {
-    text-align: center;
+    position: absolute;
+    top: 0;
     left: 0;
     right: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3em;
+    padding: 0.5em 0;
   }
 
   .rotate-item-secondary {
@@ -172,17 +183,17 @@
 }
 
 @keyframes rotateFadeSecondaryMobile {
-  0% { opacity: 0; transform: translateY(10px) scale(0.95) translateZ(0); }
-  8% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  22% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  30%, 100% { opacity: 0; transform: translateY(-10px) scale(0.95) translateZ(0); }
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  8% { opacity: 1; transform: translateY(0) scale(1); }
+  22% { opacity: 1; transform: translateY(0) scale(1); }
+  30%, 100% { opacity: 0; transform: translateY(-20px) scale(0.95); }
 }
 
 @keyframes rotateFadeNoOverlapMobile {
-  0% { opacity: 0; transform: translateY(15px) scale(0.9) translateZ(0); }
-  3% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  9% { opacity: 1; transform: translateY(0) scale(1) translateZ(0); }
-  10%, 100% { opacity: 0; transform: translateY(-15px) scale(0.9) translateZ(0); }
+  0% { opacity: 0; transform: translateY(25px) scale(0.9); }
+  3% { opacity: 1; transform: translateY(0) scale(1); }
+  9% { opacity: 1; transform: translateY(0) scale(1); }
+  10%, 100% { opacity: 0; transform: translateY(-25px) scale(0.9); }
 }
 
 /* Reduced motion */
